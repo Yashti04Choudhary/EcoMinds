@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Chatbot | EcoMind AI</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="profile-body">
+  <!-- Page Navbar -->
+  <nav class="page-navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand">
+        <i class="fas fa-leaf"></i> EcoMind AI
+      </a>
+      <div class="navbar-links">
+        <ul>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="profile-container">
+    <!-- Chatbot Overview Card -->
+    <div class="profile-card">
+      <div class="profile-user-info">
+        <div class="profile-avatar">
+          <i class="fas fa-robot"></i>
+        </div>
+        <div class="profile-details">
+          <h2>EcoMind AI Assistant</h2>
+          <span class="role-tag">24/7 Support</span>
+        </div>
+      </div>
+
+      <!-- Chatbot Features -->
+      <div class="profile-points">
+        <h3>How I Can Help You</h3>
+        <div class="points-display">
+          <i class="fas fa-recycle"></i>
+          <span>♻️</span>
+          <div>
+            <strong>E-Waste Classification</strong>
+            <p>Get help identifying and categorizing electronic devices</p>
+          </div>
+        </div>
+        
+        <div class="points-display" style="background-color: var(--primary-bg); color: var(--primary);">
+          <i class="fas fa-calendar-alt"></i>
+          <span>📅</span>
+          <div>
+            <strong>Pickup Scheduling</strong>
+            <p>Learn about pickup procedures and scheduling</p>
+          </div>
+        </div>
+        
+        <div class="points-display" style="background-color: var(--success); color: #155724;">
+          <i class="fas fa-leaf"></i>
+          <span>🌱</span>
+          <div>
+            <strong>Environmental Tips</strong>
+            <p>Discover eco-friendly practices and sustainability tips</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chatbot Capabilities -->
+      <div class="profile-badges">
+        <h3>My Capabilities</h3>
+        <div class="badges-grid">
+          <div class="badge earned">
+            <i class="fas fa-brain"></i>
+            <span>AI Powered</span>
+          </div>
+          <div class="badge earned">
+            <i class="fas fa-clock"></i>
+            <span>24/7 Available</span>
+          </div>
+          <div class="badge earned">
+            <i class="fas fa-language"></i>
+            <span>Multi-Language</span>
+          </div>
+          <div class="badge earned">
+            <i class="fas fa-mobile-alt"></i>
+            <span>Mobile Friendly</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Interface Card -->
+    <div class="content-card">
+      <h2>Chat with EcoMind AI</h2>
+      
+      <!-- Chat Container -->
+      <div class="chat-container">
+        <div class="chat-messages" id="chat-messages">
+          <div class="message bot-message">
+            <div class="message-avatar">
+              <i class="fas fa-robot"></i>
+            </div>
+            <div class="message-content">
+              <p>Hello! I'm EcoMind AI, your e-waste recycling assistant. How can I help you today? You can ask me about:</p>
+              <ul>
+                <li>• E-waste classification and disposal</li>
+                <li>• Scheduling pickups</li>
+                <li>• Environmental impact</li>
+                <li>• Recycling best practices</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Chat Input -->
+        <div class="chat-input-container">
+          <div class="chat-input-wrapper">
+            <input type="text" id="chat-input" placeholder="Type your message here..." class="chat-input">
+            <button id="send-button" class="send-button">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Actions Card -->
+    <div class="content-card">
+      <h2>Quick Actions</h2>
+      
+      <div class="initiative-grid">
+        <div class="initiative-item quick-action">
+          <i class="fas fa-mobile-alt"></i>
+          <h4>Classify Device</h4>
+          <p>Get help identifying your electronic device type</p>
+          <button class="btn-action" onclick="sendQuickMessage('How do I classify my electronic device?')">Ask Now</button>
+        </div>
+        
+        <div class="initiative-item quick-action">
+          <i class="fas fa-calendar-check"></i>
+          <h4>Schedule Pickup</h4>
+          <p>Learn about pickup scheduling and procedures</p>
+          <button class="btn-action" onclick="sendQuickMessage('How do I schedule a pickup?')">Ask Now</button>
+        </div>
+        
+        <div class="initiative-item quick-action">
+          <i class="fas fa-leaf"></i>
+          <h4>Environmental Impact</h4>
+          <p>Understand the environmental benefits of recycling</p>
+          <button class="btn-action" onclick="sendQuickMessage('What is the environmental impact of recycling e-waste?')">Ask Now</button>
+        </div>
+        
+        <div class="initiative-item quick-action">
+          <i class="fas fa-question-circle"></i>
+          <h4>General Help</h4>
+          <p>Get answers to common questions about e-waste</p>
+          <button class="btn-action" onclick="sendQuickMessage('What are the most common types of e-waste?')">Ask Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Card -->
+    <div class="content-card">
+      <h2>Frequently Asked Questions</h2>
+      
+      <div class="testimonials">
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <h4>What types of e-waste can I recycle?</h4>
+            <p>You can recycle various electronic devices including smartphones, laptops, tablets, desktop computers, televisions, printers, and household electronics. Our AI can help you classify your specific device.</p>
+          </div>
+        </div>
+        
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <h4>How do I prepare my e-waste for pickup?</h4>
+            <p>Remove personal data, disconnect all cables, and place devices in a secure container. For batteries, ensure they're properly packaged to prevent damage during transport.</p>
+          </div>
+        </div>
+        
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <h4>Is my data safe when recycling?</h4>
+            <p>Yes! We follow strict data security protocols. All devices are securely wiped or destroyed during the recycling process to protect your personal information.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script> -->
+  <script src="js/chatbot.js"></script>
+</body>
+</html>

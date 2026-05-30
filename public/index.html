@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EcoMind AI: Recycle Smart</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="has-collapsible-sidebar">
+  <header class="sticky-header">
+    <div class="header-content">
+      <h1 class="main-title">EcoMind AI: Recycle Smart</h1>
+      <div id="logout-menu" style="display: none;" class="navbar-logout">
+        <button id="logout-btn" class="btn-logout">Logout <i class="fas fa-sign-out-alt"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Collapsible Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h3>Navigation</h3>
+      <button class="sidebar-close" id="sidebarClose">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="environmental-reporting.html"><i class="fas fa-chart-line"></i> Environmental Reporting</a></li>
+        <li><a href="social-challenges.html"><i class="fas fa-trophy"></i> Social Challenges</a></li>
+        <li><a href="learning.html"><i class="fas fa-graduation-cap"></i> Learning</a></li>
+        <li><a href="chatbot.html"><i class="fas fa-comments"></i> Chatbot</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Sidebar Open Button -->
+  <button class="sidebar-open" id="sidebarOpen">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    <!-- Card 1: Project Motive & Govt Initiatives -->
+    <section class="content-card">
+      <h2>Our Mission</h2>
+      <p>EcoMind AI is dedicated to revolutionizing e-waste management through intelligent technology. We bridge the gap between environmental consciousness and practical action, making recycling accessible and rewarding for everyone.</p>
+      <p>We dream of a cleaner India where every smartphone, laptop, and gadget finds a responsible second life. EcoMinds empowers you to take action—transforming electronic waste from a growing problem into a sustainable opportunity for our planet.</p>
+<br>
+      <h2>Our Intuition</h2>
+        <p>India is one of the world's top e-waste generators, with 2 million tons produced every year—and most of it isn't recycled safely. Rapid tech growth, low awareness, and limited access to recycling centers make responsible disposal a real challenge. EcoMinds was created by students, for students and communities, to bridge this gap and make recycling easy and accessible for everyone.</p>
+      
+      <div class="initiatives">
+        <h3>Government Initiatives We Support</h3>
+        <div class="initiative-grid">
+          <div class="initiative-item">
+            <i class="fas fa-recycle"></i>
+            <h4>Extended Producer Responsibility</h4>
+            <p>Our app encourages manufacturers and users to take responsibility for the lifecycle of electronics, promoting recycling and sustainable design.</p>
+          </div>
+          <div class="initiative-item">
+            <i class="fas fa-leaf"></i>
+            <h4>Green India Mission</h4>
+            <p>We champion forest and ecosystem restoration by reducing e-waste pollution, ensuring a healthier environment for generations to come.</p>
+          </div>
+          <div class="initiative-item">
+            <i class="fas fa-handshake"></i>
+            <h4>Digital India</h4>
+            <p>By leveraging digital tools and AI, we make recycling accessible, transparent, and inclusive for all—powering a circular economy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it Works Flowchart -->
+    <section class="content-card flowchart-container">
+      <h2>How EcoMinds Works</h2>
+      <img src="assets/EcoMinds Application FlowChart.png" alt="A flowchart explaining the 4 steps of the EcoMinds app: Scan E-Waste, Find a Recycler, Schedule Pickup, and Earn Rewards." class="flowchart-image">
+    </section>
+
+    <!-- Explorers Section -->
+    <section class="explorers-section">
+      <h2>Choose Your Path</h2>
+      <div class="explorer-buttons">
+        <button class="explorer-btn user-btn" id="enter-as-user-btn">
+          <div class="btn-icon">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="btn-content">
+            <h3>Enter as User</h3>
+            <p>Schedule pickups and earn rewards</p>
+          </div>
+        </button>
+        <button class="explorer-btn recycler-btn" id="enter-as-recycler-btn">
+          <div class="btn-icon">
+            <i class="fas fa-recycle"></i>
+          </div>
+          <div class="btn-content">
+            <h3>Enter as Recycler</h3>
+            <p>Classify e-waste and contribute to sustainability</p>
+          </div>
+        </button>
+      </div>
+    </section>
+
+    <!-- Card 2: Testimonials -->
+    <section class="content-card">
+      <h2>What Our Community Says</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>"EcoMind AI made recycling so easy! The AI classification feature is incredibly accurate, and I love earning points for my environmental contributions."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="author-info">
+              <h4>Priya Sharma</h4>
+              <span>Environmental Activist</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>"As a business owner, this platform has helped us implement proper e-waste disposal practices. The scheduling system is seamless and professional."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="author-info">
+              <h4>Rajesh Kumar</h4>
+              <span>Tech Startup Founder</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>"The rewards system motivates my family to recycle more. We've learned so much about proper e-waste disposal through this platform."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="author-info">
+              <h4>Meera Patel</h4>
+              <span>Homemaker & Educator</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 AI4E-Waste. Built with love for a cleaner Earth 💚</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+  
+  <!-- Firebase App (the core Firebase SDK) -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <!-- Firebase Auth -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <!-- Firebase Firestore -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  
+  <!-- Your Firebase config and logic -->
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

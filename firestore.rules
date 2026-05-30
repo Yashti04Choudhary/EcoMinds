@@ -1,0 +1,42 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Allow read access to non-sensitive public data like recycler centers
+    match /recycler_centers/{centerId} {
+      allow read: if true;
+      allow write: if false; // Should only be updated via backend/trusted logic
+    }
+
+    match /users/{userId} {
+      // A user can only read or update their own data
+      allow read, update: if request.auth.uid == userId;
+
+      // Allow user creation if the role is 'user', OR if the role is 'recycler'
+      // and they are linking to a valid, unregistered center.
+      // This single rule covers both create scenarios.
+      allow create: if request.auth.uid == userId && (
+        (request.resource.data.role == 'user') ||
+        (
+          request.resource.data.role == 'recycler' &&
+          exists(/databases/$(database)/documents/recycler_centers/$(request.resource.data.linkedCenter)) &&
+          get(/databases/$(database)/documents/recycler_centers/$(request.resource.data.linkedCenter)).data.isRegistered == false
+        )
+      );
+    }
+
+    // Rules for pickup requests
+    match /pickups/{pickupId} {
+      // Logged-in users can create pickups
+      allow create: if request.auth != null;
+      
+      // Users can see their own pickups, recyclers can see all
+      allow read: if resource.data.userId == request.auth.uid || 
+                     get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'recycler';
+                     
+      // Recyclers can update status, users cannot
+      allow update: if get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'recycler';
+    }
+  }
+}

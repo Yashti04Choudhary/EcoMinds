@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login & Signup | EcoMind AI</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- ✅ Firebase v8 CDN -->
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+  <!-- ✅ Your Firebase config and logic -->
+  <script defer src="js/firebase-config.js"></script>
+  <script defer src="js/auth.js"></script>
+</head>
+
+<body class="auth-body">
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="auth-header">
+        <a href="index.html" class="auth-logo">
+          <i class="fas fa-leaf"></i>
+          <h1>EcoMind AI</h1>
+        </a>
+        <p>Welcome! Please login or create an account to continue.</p>
+      </div>
+      
+      <div class="auth-tabs">
+        <button class="auth-tab-link active" data-tab="login">Login</button>
+        <button class="auth-tab-link" data-tab="signup">Signup</button>
+      </div>
+
+      <!-- Login Form -->
+      <div id="login" class="auth-tab-content active">
+        <form id="login-form" class="auth-form">
+          <div class="form-group">
+            <label for="login-email">Email Address</label>
+            <input type="email" id="login-email" required>
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" required>
+          </div>
+          <button type="submit" class="btn-submit">Login</button>
+        </form>
+      </div>
+
+      <!-- Signup Form -->
+      <div id="signup" class="auth-tab-content">
+        <form id="signup-form" class="auth-form">
+          <div class="form-group">
+            <label for="signup-name">Full Name</label>
+            <input type="text" id="signup-name" required>
+          </div>
+          <div class="form-group">
+            <label for="signup-email">Email Address</label>
+            <input type="email" id="signup-email" required>
+          </div>
+          <div class="form-group">
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" required>
+          </div>
+          <button type="submit" class="btn-submit">Create Account</button>
+        </form>
+      </div>
+
+      <div class="social-auth">
+        <div class="separator">OR</div>
+        <button id="google-signin-btn" class="btn-social">
+          <i class="fab fa-google"></i>
+          <span>Sign in with Google</span>
+        </button>
+      </div>
+
+      <div class="auth-footer">
+        <a href="index.html"><i class="fas fa-arrow-left"></i> Back to Home</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 AI4E-Waste</p>
+  </footer>
+</body>
+</html>

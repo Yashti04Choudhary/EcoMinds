@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Social Challenges | EcoMind AI</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="profile-body">
+  <!-- Page Navbar -->
+  <nav class="page-navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand">
+        <i class="fas fa-leaf"></i> EcoMind AI
+      </a>
+      <div class="navbar-links">
+        <ul>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="profile-container">
+    <!-- Challenge Overview Card -->
+    <div class="profile-card">
+      <div class="profile-user-info">
+        <div class="profile-avatar">
+          <i class="fas fa-trophy"></i>
+        </div>
+        <div class="profile-details">
+          <h2>Social Challenges</h2>
+          <span class="role-tag">Gamified Recycling</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Challenges Card -->
+    <div class="content-card">
+      <h2>Active Challenges</h2>
+      
+      <div class="initiative-grid">
+        <div class="initiative-item challenge-item">
+          <i class="fas fa-calendar-check"></i>
+          <h4>Weekly Recycling Streak</h4>
+          <p>Recycle at least 3 items this week</p>
+          <button class="btn-action">View Details</button>
+        </div>
+        
+        <div class="initiative-item challenge-item">
+          <i class="fas fa-users"></i>
+          <h4>Community Challenge</h4>
+          <p>Help your community recycle 100 devices</p>
+          <button class="btn-action">Join Challenge</button>
+        </div>
+        
+        <div class="initiative-item challenge-item">
+          <i class="fas fa-graduation-cap"></i>
+          <h4>Learning Champion</h4>
+          <p>Complete 5 educational modules</p>
+          <button class="btn-action">Continue Learning</button>
+        </div>
+        
+        <div class="initiative-item challenge-item">
+          <i class="fas fa-share-alt"></i>
+          <h4>Social Media Advocate</h4>
+          <p>Share your recycling journey on social media</p>
+          <button class="btn-action">Learn More</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Leaderboard Card -->
+    <div class="content-card">
+      <h2>Community Leaderboard</h2>
+      
+      <div class="statistics-details">
+        <h3>Top Recyclers This Month</h3>
+        <div class="breakdown-list" id="leaderboard">
+          <div class="breakdown-item leaderboard-item">
+            <div class="item-info">
+              <div class="item-name">🏆 Sarah Johnson</div>
+              <div class="item-count">1,250 points</div>
+            </div>
+            <div class="item-percentage">#1</div>
+          </div>
+          
+          <div class="breakdown-item leaderboard-item">
+            <div class="item-info">
+              <div class="item-name">🥈 Mike Chen</div>
+              <div class="item-count">1,180 points</div>
+            </div>
+            <div class="item-percentage">#2</div>
+          </div>
+          
+          <div class="breakdown-item leaderboard-item">
+            <div class="item-info">
+              <div class="item-name">🥉 Priya Sharma</div>
+              <div class="item-count">1,120 points</div>
+            </div>
+            <div class="item-percentage">#3</div>
+          </div>
+          
+          <div class="breakdown-item leaderboard-item">
+            <div class="item-info">
+              <div class="item-name">👤 You</div>
+              <div class="item-count">850 points</div>
+            </div>
+            <div class="item-percentage">#8</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Upcoming Challenges Card -->
+    <div class="content-card">
+      <h2>Upcoming Challenges</h2>
+      
+      <div class="testimonials">
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <h4>🌍 Earth Day Challenge</h4>
+            <p>Join the global movement! Recycle 10 items during Earth Day week and earn special badges and rewards.</p>
+            <div class="challenge-meta">
+              <span><i class="fas fa-calendar"></i> April 22-28, 2025</span>
+              <span><i class="fas fa-gift"></i> Special Earth Day Badge</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <h4>🏫 School Recycling Drive</h4>
+            <p>Help your local school organize a recycling drive. Collect e-waste from students and families.</p>
+            <div class="challenge-meta">
+              <span><i class="fas fa-calendar"></i> May 1-15, 2025</span>
+              <span><i class="fas fa-gift"></i> Community Leader Badge</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/social-challenges.js"></script>
+</body>
+</html> 

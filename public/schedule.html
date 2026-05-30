@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Schedule Pickup | EcoMind AI</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="schedule-body">
+
+  <header class="page-navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand">EcoMind AI</a>
+      <nav class="navbar-links">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="schedule.html">Schedule Pickup</a></li>
+          <li><a href="locator.html">Map</a></li>
+        </ul>
+      </nav>
+      <div id="logout-menu" style="display: none;" class="navbar-logout">
+        <button id="logout-btn" class="btn-logout">Logout <i class="fas fa-sign-out-alt"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <div class="schedule-card">
+      <form id="schedule-form">
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+          <div class="progress-step active" data-step="1">
+            <div class="step-icon"><i class="fas fa-user"></i></div>
+            <div class="step-label">Contact</div>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step" data-step="2">
+            <div class="step-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="step-label">Address</div>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step" data-step="3">
+            <div class="step-icon"><i class="fas fa-calendar-alt"></i></div>
+            <div class="step-label">Schedule</div>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step" data-step="4">
+            <div class="step-icon"><i class="fas fa-box"></i></div>
+            <div class="step-label">Items</div>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step" data-step="5">
+            <div class="step-icon"><i class="fas fa-check"></i></div>
+            <div class="step-label">Confirm</div>
+          </div>
+        </div>
+
+        <!-- Step 1: Contact Information -->
+        <div class="form-step active" data-step="1">
+          <h2 class="step-title">Step 1: Contact Information</h2>
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+          </div>
+        </div>
+
+        <!-- Step 2: Pickup Address -->
+        <div class="form-step" data-step="2">
+          <h2 class="step-title">Step 2: Pickup Address</h2>
+          <div class="form-group">
+            <label for="address">Street Address</label>
+            <input type="text" id="address" name="address" placeholder="e.g., 123 Eco Lane" required>
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" required>
+          </div>
+          <div class="form-group">
+            <label for="zip">ZIP / Postal Code</label>
+            <input type="text" id="zip" name="zip" required>
+          </div>
+        </div>
+
+        <!-- Step 3: Schedule Date & Time -->
+        <div class="form-step" data-step="3">
+          <h2 class="step-title">Step 3: Schedule Date & Time</h2>
+          <div class="form-group">
+            <label for="pickupDate">Preferred Pickup Date</label>
+            <input type="date" id="pickupDate" name="pickupDate" required>
+          </div>
+          <div class="form-group">
+            <label>Preferred Time Slot</label>
+            <div class="time-slots">
+              <input type="radio" id="slot1" name="timeSlot" value="9am-12pm" checked><label for="slot1">9 AM - 12 PM</label>
+              <input type="radio" id="slot2" name="timeSlot" value="12pm-3pm"><label for="slot2">12 PM - 3 PM</label>
+              <input type="radio" id="slot3" name="timeSlot" value="3pm-6pm"><label for="slot3">3 PM - 6 PM</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4: Items to Recycle -->
+        <div class="form-step" data-step="4">
+          <h2 class="step-title">Step 4: Items to Recycle</h2>
+          <div class="items-step-options">
+            <div class="manual-entry-section">
+              <h3>Manual Entry</h3>
+              <table class="items-table">
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="items-tbody">
+                  <!-- Rows will be added by JavaScript -->
+                </tbody>
+              </table>
+              <button type="button" class="add-item-btn">Add Item</button>
+            </div>
+            <div class="image-classifier-section">
+              <h3>Or use our Image Classifier</h3>
+              <button type="button" class="use-classifier-btn">Use Image Classifier</button>
+              <p class="classifier-note">
+                Take a picture of each item separately. Our model can identify: <strong>CFL bulbs, batteries, fan, keyboards, laptop, mobile phone, motherboard, mouse, refrigerator, router, washing machine, wires</strong>.
+              </p>
+              <div id="classifier-preview"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image Classifier Modal -->
+        <div id="classifier-modal" class="modal" style="display:none;">
+          <div class="modal-content">
+            <span class="close-modal" id="close-classifier-modal">&times;</span>
+            <h3>Upload an Image for Classification</h3>
+            <input type="file" id="classifier-file-input" accept="image/*">
+            <div id="classifier-image-preview" style="margin: 1em 0;"></div>
+            <div id="classifier-result" style="margin-bottom: 1em;"></div>
+            <button type="button" id="classifier-confirm-btn" style="display:none;">Add Item</button>
+            <button type="button" id="classifier-cancel-btn">Cancel</button>
+          </div>
+        </div>
+        <!-- End Image Classifier Modal -->
+
+        <!-- Step 5: Confirmation (was Step 4) -->
+        <div class="form-step" data-step="5">
+          <h2 class="step-title">Step 5: Confirm Your Details</h2>
+          <div id="confirmation-details">
+            <!-- Summary will be populated by JavaScript -->
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="form-navigation">
+          <button type="button" class="btn-prev" style="display: none;">Previous</button>
+          <button type="button" class="btn-next">Next</button>
+          <button type="submit" class="btn-submit" style="display: none;">Schedule Pickup</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 AI4E-Waste. Built with love for a cleaner Earth 💚</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.10.0"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/schedule.js"></script>
+</body>
+</html>

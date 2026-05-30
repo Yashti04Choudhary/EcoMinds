@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coupons | EcoMind AI</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .coupon-card {
+      border: 1px solid #78C1F3;
+      border-radius: 10px;
+      padding: 1em;
+      margin: 1em 0.5em 1em 0.5em;
+      background: #E2F6CA;
+      max-width: 350px;
+      min-width: 250px;
+      flex: 1 1 250px;
+      box-sizing: border-box;
+    }
+    .coupon-card img {
+      display: block;
+      margin: 0.1em auto 0.3em auto;
+      height: 260px;
+      width: 260px;
+      object-fit: contain;
+    }
+    .coupon-gallery-flex, .my-coupons-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      justify-content: flex-start;
+      align-items: stretch;
+    }
+  </style>
+</head>
+<body>
+  <header class="page-navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand">EcoMind AI</a>
+      <nav class="navbar-links">
+        <ul>
+          <li><a href="profile.html">Profile</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="page-container">
+    <h1>Available Coupons</h1>
+    <div id="coupon-gallery" class="coupon-gallery-flex"></div>
+    <h1>My Coupons</h1>
+    <div id="my-coupons" class="my-coupons-flex"></div>
+  </main>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/coupons.js"></script>
+</body>
+</html> 

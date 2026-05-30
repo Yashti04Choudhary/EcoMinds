@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>User Profile | EcoMind AI</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Firebase v8 CDN -->
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <!-- Your Firebase config and logic -->
+    <script defer src="js/firebase-config.js"></script>
+    <script defer src="js/auth.js"></script>
+    <script defer src="js/profile.js"></script>
+</head>
+<body class="profile-body">
+
+  <header class="page-navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand">EcoMind AI</a>
+      <nav class="navbar-links">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="schedule.html">Schedule Pickup</a></li>
+          <li><a href="locator.html">Map</a></li>
+        </ul>
+      </nav>
+      <div id="logout-menu" style="display: none;" class="navbar-logout">
+        <button id="logout-btn" class="btn-logout">Logout <i class="fas fa-sign-out-alt"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="profile-container">
+    <div class="profile-card">
+      
+      <!-- User Info Section -->
+      <section class="profile-user-info">
+        <div class="profile-avatar">
+          <i class="fas fa-user-circle"></i>
+        </div>
+        <div class="profile-details">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <h2 id="user-name-display" style="margin: 0;">loading...</h2>
+            <button id="edit-name-btn" class="btn-action" style="font-size: 0.9rem; padding: 0.3rem 0.8rem;">
+              <i class="fas fa-edit"></i>
+            </button>
+          </div>
+          <div id="edit-name-form" style="display:none; align-items: center; gap: 0.5rem; margin-top: 0.5rem;">
+            <input type="text" id="user-name-input" style="font-size:1.1rem; padding:0.3rem 0.5rem; border-radius:6px; border:1px solid #ccc;">
+            <button id="save-name-btn" class="btn-action" style="font-size:0.9rem; padding:0.3rem 0.8rem;">Save</button>
+            <button id="cancel-name-btn" class="btn-action" style="font-size:0.9rem; padding:0.3rem 0.8rem; background:#eee; color:#333;">Cancel</button>
+          </div>
+          <p id="user-email-display" style="margin: 0.5rem 0 0 0; color: #6c757d; font-size: 1rem;">loading...</p>
+          <p id="user-role-display" class="role-tag">loading...</p>
+        </div>
+      </section>
+
+      <!-- Eco-Points Section -->
+      <section class="profile-points">
+        <h3>Eco-Points</h3>
+        <div class="points-display">
+          <i class="fas fa-star"></i>
+          <span id="user-points-display">0</span>
+        </div>
+        <button onclick="window.location.href='coupons.html'" class="btn-action" style="margin-top:1rem;">My Coupons</button>
+        <p>Keep recycling to earn more points and rewards!</p>
+      </section>
+
+      <!-- Badges Section -->
+      <section class="profile-badges">
+        <h3>Your Badges</h3>
+        <div class="badges-grid">
+          <div class="badge earned">
+            <i class="fas fa-recycle"></i>
+            <span>First Recycle</span>
+          </div>
+          <div class="badge earned">
+            <i class="fas fa-award"></i>
+            <span>Eco-Warrior</span>
+          </div>
+          <div class="badge">
+            <i class="fas fa-star"></i>
+            <span>Point Collector</span>
+          </div>
+           <div class="badge">
+            <i class="fas fa-seedling"></i>
+            <span>Green Thumb</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 AI4E-Waste. Built with love for a cleaner Earth 💚</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Recycler Dashboard | EcoMind AI</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="recycler-body">
+
+  <header class="page-navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand">EcoMind AI</a>
+      <nav class="navbar-links">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recycler.html" class="active">Dashboard</a></li>
+          <li><a href="#" id="statistics-link">Statistics</a></li>
+        </ul>
+      </nav>
+      <div id="logout-menu" style="display: none;" class="navbar-logout">
+        <button id="logout-btn" class="btn-logout">Logout <i class="fas fa-sign-out-alt"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="recycler-container">
+    <!-- Unassigned Scheduled Pickups Section -->
+    <div id="unassigned-pickups-section" class="dashboard-card">
+      <div class="dashboard-header">
+        <h2>Unassigned Scheduled Pickups</h2>
+        <p>Pickups that have not yet been claimed by any recycler. Click 'Start' to claim and begin a pickup.</p>
+      </div>
+      <div class="pickups-table-container">
+        <table class="pickups-table">
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Address</th>
+              <th>Pickup Date</th>
+              <th>Items</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="unassigned-pickups-tbody">
+            <tr>
+              <td colspan="6" class="loading-cell">Loading unassigned pickups...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div id="dashboard-section" class="dashboard-card">
+      <div class="dashboard-header">
+        <h2>Recycler Dashboard</h2>
+        <p>Review and manage all pending and completed e-waste pickups.</p>
+      </div>
+      
+      <div class="pickups-table-container">
+        <table class="pickups-table">
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Address</th>
+              <th>Pickup Date</th>
+              <th>Items</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="pickups-tbody">
+            <!-- Pickup rows will be injected by JavaScript -->
+            <tr>
+              <td colspan="6" class="loading-cell">Loading pickups...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Statistics Section -->
+    <div id="statistics-section" class="statistics-card" style="display: none;">
+      <div class="statistics-header">
+        <h2>Recycling Statistics</h2>
+        <p>Track your recycling performance and environmental impact.</p>
+      </div>
+      
+      <div class="statistics-filters">
+        <button class="filter-btn active" data-period="week">Last Week</button>
+        <button class="filter-btn" data-period="month">Last Month</button>
+        <button class="filter-btn" data-period="year">Last Year</button>
+      </div>
+
+      <div class="statistics-grid">
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-recycle"></i>
+          </div>
+          <div class="stat-content">
+            <h3 id="total-items">0</h3>
+            <p>Total Items Recycled</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-weight-hanging"></i>
+          </div>
+          <div class="stat-content">
+            <h3 id="total-weight">0 kg</h3>
+            <p>Total Weight</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="stat-content">
+            <h3 id="total-users">0</h3>
+            <p>Users Served</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <div class="stat-content">
+            <h3 id="co2-saved">0 kg</h3>
+            <p>CO₂ Saved</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="statistics-details">
+        <h3>Item Breakdown</h3>
+        <div class="item-breakdown" id="item-breakdown">
+          <div class="loading-cell">Loading breakdown...</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 AI4E-Waste. Built with love for a cleaner Earth 💚</p>
+  </footer>
+  
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/recycler.js"></script>
+</body>
+</html> 
